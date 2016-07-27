@@ -1,4 +1,6 @@
-RewriteEngine on
-RewriteBase /
-RewriteCond %{HTTP_HOST} yichenlivened.github.io [NC]
-RewriteRule ^(.*)$ http://yichenlivened.github.io/Dashboard/index.html [R=301,NC]
+   RewriteEngine on
+    RewriteCond %{REQUEST_FILENAME} -s [OR]
+    RewriteCond %{REQUEST_FILENAME} -l [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^.*$ - [NC,L]
+    RewriteRule ^(.*) /Dashboard/index.html [NC,L]
